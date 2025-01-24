@@ -19,8 +19,6 @@ body {
     background-color: rgba(255, 105, 98, 0.4);
     width: 100%;
     z-index: 1000;
-
-
 }
 
 #brand {
@@ -58,7 +56,6 @@ body {
 #navbar a:hover {
     color: #ff1a1a;
 }
-
 
 #main {
     display: flex;
@@ -120,8 +117,8 @@ body {
 @media (max-width: 768px) {
     .main-content {
         flex-direction: column;
-        
     }
+
     .main-content img {
         width: 70%;
     }
@@ -131,10 +128,10 @@ body {
         text-align: center;
         align-items: center;
     }
+
     .main-content a {
         width: 100%;
     }
-
 }
 
 @media (max-width: 480px) {
@@ -145,4 +142,47 @@ body {
         padding-top: 2%;
         padding-bottom: 2%;
     }
+}
+
+.report-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 70px;
+    padding-top: 60px;
+}
+
+.report-link {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff4d4d;
+}
+
+.report-img {
+    padding: 45px;
+    max-width: 100%;
+    height: auto;
+}
+
+.report-title {
+    color: #ff4d4d;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.report-section {
+    padding: 15px;
+}
+
+.section-title {
+    color: #ff4d4d;
+    font-size: 24px;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.section-paragraph {
+    color: #666;
+    font-size: 17px;
 }
