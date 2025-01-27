@@ -160,6 +160,24 @@ iframe {
     transform-origin: top left;
 }
 
+#project-header {
+    text-align: center;
+    font-size: 48px;
+    color: #ff4d4d;
+    margin-bottom: 20px;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+#about-header {
+    text-align: center;
+    font-size: 48px;
+    color: #ff4d4d;
+    margin-bottom: 20px;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
 @media (max-width: 768px) {
     .main-content {
         flex-direction: column;
