@@ -132,10 +132,24 @@ body {
     margin-bottom: 5vh;
 }
 
+.title {
+    text-align: center;
+    color: #ff4d4d;
+    text-decoration: none;
+    font-size: 1.5vw;
+}
+
+.bottom {
+    text-align: center;
+    line-height: 65vh;
+    vertical-align: bottom;
+    font-size: 1vw;
+}
+
 #panel {
     display: flex;
-    justify-content: space-evenly;
-    height: 1200px;
+    display: block;
+    height: 14vh;
     width: 150%;
     margin: 0%;
 }
@@ -144,7 +158,8 @@ body {
     border: none;
     height: 500%;
     width: 100%;
-    margin-left: 4vh;
+    margin-right: 4vw;
+    margin-left: 4vw;
 }
 
 iframe {
