@@ -254,3 +254,24 @@ iframe {
     color: #666;
     font-size: 17px;
 }
+
+/*
+About Page
+*/
+#about-container{
+  display: flex;
+
+}
+
+.about-person {
+    text-align: center;
+}
+
+.about-person img{
+    width: 100%;
+}
+
+
+.about-pfp{
+
+}
