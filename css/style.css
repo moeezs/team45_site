@@ -121,6 +121,55 @@ body {
     width: 100%;
     height: 70vh;
     justify-content: space-evenly;
+
+    .title {
+        text-align: center;
+        color: #ff4d4d;
+        text-decoration: none;
+        font-size: 1.5vw;
+    }
+
+    #panel {
+        display: flex;
+        display: block;
+        height: 14vh;
+        width: 150%;
+        margin: 0%;
+    }
+    
+    #embedded-page {
+        border: none;
+        height: 500%;
+        width: 100%;
+        margin-right: 4vw;
+        margin-left: 4vw;
+    }
+}
+
+#team-report {
+    height: 70vh;
+    .title {
+        text-align: center;
+        color: #ff4d4d;
+        text-decoration: none;
+        font-size: 2.5vw;
+    }
+
+    #panel {
+        display: flex;
+        display: block;
+        height: 20vh;
+        width: 150%;
+        margin: 0%;
+    }
+    
+    #embedded-page {
+        border: none;
+        height: 500%;
+        width: 100%;
+        margin-right: 4vw;
+        margin-left: 4vw;
+    }
 }
 
 #showcase-header {
@@ -132,34 +181,11 @@ body {
     margin-bottom: 5vh;
 }
 
-.title {
-    text-align: center;
-    color: #ff4d4d;
-    text-decoration: none;
-    font-size: 1.5vw;
-}
-
 .bottom {
     text-align: center;
     line-height: 65vh;
     vertical-align: bottom;
     font-size: 1vw;
-}
-
-#panel {
-    display: flex;
-    display: block;
-    height: 14vh;
-    width: 150%;
-    margin: 0%;
-}
-
-#embedded-page {
-    border: none;
-    height: 500%;
-    width: 100%;
-    margin-right: 4vw;
-    margin-left: 4vw;
 }
 
 iframe {
