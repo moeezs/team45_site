@@ -9,7 +9,7 @@ body {
     background-color: #fff5f5;
     color: #333;
     box-sizing: border-box;
-    min-height: 100vh;
+    overflow-x:hidden;
 }
 
 #header {
@@ -117,8 +117,8 @@ body {
 
 #organizer {
     display: grid;
-    grid-template-columns: 1fr 1fr; 
-    gap: 10px; 
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
     width: 100%;
     height: 70vh;
     justify-content: space-evenly;
@@ -128,6 +128,7 @@ body {
         color: #ff4d4d;
         text-decoration: none;
         font-size: 1.5vw;
+        height: 50vh;
     }
 
     #panel {
@@ -137,7 +138,7 @@ body {
         width: 150%;
         margin: 0%;
     }
-    
+
     #embedded-page {
         border: none;
         height: 500%;
@@ -145,10 +146,31 @@ body {
         margin-right: 4vw;
         margin-left: 4vw;
     }
+
+    .bottom {
+        text-align: center;
+        line-height: 65vh;
+        vertical-align: bottom;
+        font-size: 1vw;
+    }
+
+    iframe {
+        -moz-transform: scale(0.6, 0.6);
+        -webkit-transform: scale(0.6, 0.6);
+        -o-transform: scale(0.6, 0.6);
+        -ms-transform: scale(0.6, 0.6);
+        transform: scale(0.6, 0.6);
+        -moz-transform-origin: top left;
+        -webkit-transform-origin: top left;
+        -o-transform-origin: top left;
+        -ms-transform-origin: top left;
+        transform-origin: top left;
+    }
 }
 
 #team-report {
     height: 70vh;
+
     .title {
         text-align: center;
         color: #ff4d4d;
@@ -160,16 +182,36 @@ body {
         display: flex;
         display: block;
         height: 20vh;
-        width: 150%;
+        width: 100%;
         margin: 0%;
     }
-    
+
     #embedded-page {
         border: none;
         height: 500%;
-        width: 100%;
+        width: 130%;
         margin-right: 4vw;
         margin-left: 4vw;
+    }
+
+    .bottom {
+        text-align: center;
+        line-height: 112vh;
+        vertical-align: bottom;
+        font-size: 2vw;
+    }
+
+    iframe {
+        -moz-transform: scale(0.7, 0.7);
+        -webkit-transform: scale(0.7, 0.7);
+        -o-transform: scale(0.7, 0.7);
+        -ms-transform: scale(0.7, 0.7);
+        transform: scale(0.7, 0.7);
+        -moz-transform-origin: top left;
+        -webkit-transform-origin: top left;
+        -o-transform-origin: top left;
+        -ms-transform-origin: top left;
+        transform-origin: top left;
     }
 }
 
@@ -180,26 +222,6 @@ body {
     margin-bottom: 20px;
     margin-top: 5vh;
     margin-bottom: 5vh;
-}
-
-.bottom {
-    text-align: center;
-    line-height: 65vh;
-    vertical-align: bottom;
-    font-size: 1vw;
-}
-
-iframe {
-    -moz-transform: scale(0.6, 0.6);
-    -webkit-transform: scale(0.6, 0.6);
-    -o-transform: scale(0.6, 0.6);
-    -ms-transform: scale(0.6, 0.6);
-    transform: scale(0.6, 0.6);
-    -moz-transform-origin: top left;
-    -webkit-transform-origin: top left;
-    -o-transform-origin: top left;
-    -ms-transform-origin: top left;
-    transform-origin: top left;
 }
 
 #project-header {
@@ -241,7 +263,7 @@ iframe {
     }
 
     #organizer {
-        display:inline;
+        display: inline;
     }
 }
 
