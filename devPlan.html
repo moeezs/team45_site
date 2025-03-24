@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Development Plan</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="header">
+        <a id="brand" href="index.html">
+            <img src="images/dynamite_logo.png" alt="Dynamite Logo">
+            <h1>Dynamite</h1>
+        </a>
+        <div id="navbar">
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i> <br>
+                <strong>Home</strong>
+            </a>
+            <a href="about.html">
+                <i class="fa-solid fa-address-card"></i> <br>
+                <strong>About</strong>
+            </a>
+            <a href="project.html">
+                <i class="fa-solid fa-list-check"></i> <br>
+                <strong>Projects</strong>
+            </a>
+            <a href="showcase.html">
+                <i class="fa-solid fa-panorama"></i> <br>
+                <strong>Showcase</strong>
+            </a>
+        </div>
+    </div> 
+
+    <div class="report-container" style="padding: 20px; line-height: 1.6;">
+        <h1 class="report-title" style="margin-bottom: 20px;">Development Plan</h1>
+        <img src="images/basketballPlayers.jpg" width="700" height="auto" class="report-img" style="display: block; margin: 0 auto 20px;">
+    
+        <div class="report-section" style="margin-bottom: 15px;">
+            <h2 class="section-title" style="margin-bottom: 5px;">Project Name: Bounce</h2>
+        </div>
+    
+        <div class="report-section" style="margin-bottom: 15px;">
+            <h2 class="section-title" style="margin-bottom: 5px;">Client Name: Krishh Lala</h2>
+        </div>
+    
+        <div class="report-section" style="margin-bottom: 15px;">
+            <h2 class="section-title" style="margin-bottom: 5px;">Team Members: Abdul Moeez Shaikh, Daryl John, Grady Rueffer, Gagan Bhattarai</h2>
+        </div>
+    
+        <div class="align-left" style="padding-left: 10px;">
+            <div class="report-section" style="margin-bottom: 20px;">
+                <h2 class="section-title" style="margin-bottom: 10px;">Purpose:</h2>
+                <ul class="section-paragraph" style="margin-left: 20px;">
+                    <li style="margin-bottom: 10px;">Krishh Lala is a passionate basketball fan who wants a deeper way to engage with the sport beyond watching games. Additionally, he sees this game as a valuable tool for basketball enthusiasts to analyze team compositions and player efficiency in a strategic setting. Also, he wants to use the simulation for his parlays, simply to see what outcomes are more likely to happen, so that he can make more informed decisions.</li>
+                    <li style="margin-bottom: 10px;">Bounce is a text-based basketball simulation game where users build custom teams from a database of real player stats. They compete against pre-built teams like the Detroit Pistons in simulated matches, making strategic decisions such as passing, shooting, and substituting players. The game uses real-life stats to determine player performance, ensuring a realistic and immersive experience.</li>
+                </ul>
+            </div>
+    
+            <div class="report-section" style="margin-bottom: 20px;">
+                <h2 class="section-title" style="margin-bottom: 10px;">Data Description:</h2>
+                <p class="section-paragraph" style="margin-bottom: 10px;">The game will require the following database tables:</p>
+                <p class="section-paragraph" style="margin-left: 20px; margin-bottom: 5px;"><strong>1. Players Table</strong> (Stores player statistics and attributes)</p>
+                <ul class="section-paragraph" style="margin-left: 20px; margin-bottom: 10px;">
+                    <li>player_id (INT, PRIMARY KEY)</li>
+                    <li>name (VARCHAR)</li>
+                    <li>position (VARCHAR)</li>
+                    <li>team (VARCHAR)</li>
+                    <li>points_per_game (FLOAT)</li>
+                    <li>assists_per_game (FLOAT)</li>
+                    <li>rebounds_per_game (FLOAT)</li>
+                    <li>steals_per_game (FLOAT)</li>
+                    <li>blocks_per_game (FLOAT)</li>
+                </ul>
+    
+                <p class="section-paragraph" style="margin-left: 20px; margin-bottom: 5px;"><strong>2. User Team Table</strong> (Stores user-created teams)</p>
+                <ul class="section-paragraph" style="margin-left: 20px; margin-bottom: 10px;">
+                    <li>team_id (INT, PRIMARY KEY)</li>
+                    <li>user_id (INT, FOREIGN KEY referencing Users)</li>
+                    <li>team_name (VARCHAR)</li>
+                </ul>
+    
+                <p class="section-paragraph" style="margin-left: 20px; margin-bottom: 5px;"><strong>3. User Team Players Table</strong> (Associates players with user teams)</p>
+                <ul class="section-paragraph" style="margin-left: 20px; margin-bottom: 10px;">
+                    <li>id (INT, PRIMARY KEY)</li>
+                    <li>team_id (INT, FOREIGN KEY referencing User Team)</li>
+                    <li>player_id (INT, FOREIGN KEY referencing Players)</li>
+                </ul>
+    
+                <p class="section-paragraph" style="margin-left: 20px; margin-bottom: 5px;"><strong>4. Matches Table</strong> (Stores match results and statistics)</p>
+                <ul class="section-paragraph" style="margin-left: 20px;">
+                    <li>match_id (INT, PRIMARY KEY)</li>
+                    <li>user_team_id (INT, FOREIGN KEY referencing User Team)</li>
+                    <li>opponent_team (VARCHAR)</li>
+                    <li>result (VARCHAR)</li>
+                    <li>score (VARCHAR)</li>
+                </ul>
+            </div>
+    
+            <div class="report-section" style="margin-bottom: 20px;">
+                <h2 class="section-title" style="margin-bottom: 10px;">Functions Performed by the App:</h2>
+                <ul class="section-paragraph" style="margin-left: 20px;">
+                    <li style="margin-bottom: 5px;"><strong>User selects players to create a custom team </strong>(INSERT into User Team and User Team Players tables)</li>
+                    <li style="margin-bottom: 5px;"><strong>Game simulates match using real player statistics</strong>(SELECT player stats, calculate outcomes, INSERT match results)</li>
+                    <li style="margin-bottom: 5px;"><strong>User makes strategic decisions during gameplay</strong>(UPDATE game state based on user inputs)</li>
+                    <li style="margin-bottom: 5px;"><strong>User views match history and statistics</strong>(SELECT from Matches table)</li>
+                    <li style="margin-bottom: 5px;"><strong>User wants to make a new team</strong>(DELETE old User Team and INSERT into User Team and User Team Players tables)</li>
+                </ul>
+            </div>
+
+            <div class="report-section" style="margin-bottom: 20px;">
+                <h2 class="section-title" style="margin-bottom: 10px;">Role of PHP and JavaScript:</h2>
+                <p class="section-paragraph"><strong>PHP:</strong></p>
+                <ul class="section-paragraph" style="margin-left: 20px;">
+                    <li style="margin-bottom: 10px;">Handles database interactions (INSERT SELECT etc. operations on teams, players, matches)</li>
+                    <li style="margin-bottom: 10px;">Processes game simulations on the server</li>
+                    <li style="margin-bottom: 10px;">Manages user sessions and authentication</li>
+                </ul>
+                <p class="section-paragraph"><strong>JavaScript:</strong></p>
+                <ul class="section-paragraph" style="margin-left: 20px;">
+                    <li style="margin-bottom: 10px;">Provides interactive user interface (team selection, in-game decisions)</li>
+                    <li style="margin-bottom: 10px;">Sends user actions (pass, shoot, etc.) to the backend for processing</li>
+                    <li style="margin-bottom: 10px;">Displays match progress and outcomes dynamically</li>
+                </ul>
+            </div>
+    
+            <div class="report-section" style="margin-bottom: 20px;">
+                <h2 class="section-title" style="margin-bottom: 10px;">Roles of Team Members:</h2>
+                <ul class="section-paragraph" style="margin-left: 20px;">
+                    <li style="margin-bottom: 10px;"><strong>Abdul Moeez Shaikh:</strong> Frontend development (JavaScript, UI implementation)</li>
+                    <li style="margin-bottom: 10px;"><strong>Daryl John:</strong> Game logic and simulation algorithm</li>
+                    <li style="margin-bottom: 10px;"><strong>Grady Rueffer:</strong> Backend development (PHP, database management)</li>
+                    <li style="margin-bottom: 10px;"><strong>Gagan Bhattarai:</strong> Project Management, JavaScript, testing, and documentation</li>
+                </ul>
+            </div>
+    
+            <div class="report-section" style="margin-bottom: 20px;">
+                <h2 class="section-title" style="margin-bottom: 10px;">The Increments:</h2>
+                <p class="section-paragraph"><strong>Increment 1 (Week 11):</strong></p>
+                <ul class="section-paragraph" style="margin-left: 20px;">
+                    <li style="margin-bottom: 10px;">Database setup and fetching player data</li>
+                    <li style="margin-bottom: 10px;">Basic team creation functionality</li>
+                </ul>
+                <p class="section-paragraph"><strong>Increment 2 (Week 12.1):</strong></p>
+                <ul class="section-paragraph" style="margin-left: 20px;">
+                    <li style="margin-bottom: 10px;">Game logic implementation (stat-based match simulation)</li>
+                    <li style="margin-bottom: 10px;">Basic UI for match interaction</li>
+                </ul>
+                <p class="section-paragraph"><strong>Increment 3 (Week 12.2):</strong></p>
+                <ul class="section-paragraph" style="margin-left: 20px;">
+                    <li style="margin-bottom: 10px;">Polishing UI and game flow</li>
+                    <li style="margin-bottom: 10px;">Final testing and debugging</li>
+                    <li style="margin-bottom: 10px;">Deployment and presentation to client</li>
+                </ul>
+            </div>
+    
+            <div class="report-section" style="margin-bottom: 20px;">
+                <h2 class="section-title" style="margin-bottom: 10px;">Client Feedback:</h2>
+                <p class="section-paragraph" style="margin-bottom: 10px;">
+                    After presenting the initial idea to Krishh Lala, he was excited about the ability to simulate real basketball games using actual player stats. He suggested:
+                </p>
+                <ul class="section-paragraph" style="margin-left: 20px;">
+                    <li style="margin-bottom: 10px;">Adding a difficulty setting to balance the gameplay.</li>
+                    <li style="margin-bottom: 10px;">Allowing users to save and load their teams for replayability.</li>
+                    <li style="margin-bottom: 10px;">Ensuring that player fatigue and stamina affect gameplay to increase realism. (Might be too complicated to implement, so we will leave it out for now)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    <div id="footer">
+        <p> &copy;  <strong>Team Dynamite 2025</strong></p>
+    </div>
+</body>
+</html>
