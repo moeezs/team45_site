@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Development Plan</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="header">
+        <a id="brand" href="index.html">
+            <img src="images/dynamite_logo.png" alt="Dynamite Logo">
+            <h1>Dynamite</h1>
+        </a>
+        <div id="navbar">
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i> <br>
+                <strong>Home</strong>
+            </a>
+            <a href="about.html">
+                <i class="fa-solid fa-address-card"></i> <br>
+                <strong>About</strong>
+            </a>
+            <a href="project.html">
+                <i class="fa-solid fa-list-check"></i> <br>
+                <strong>Projects</strong>
+            </a>
+            <a href="devPlan.html">
+                <i class="fa-solid fa-tablet"></i> <br>
+                <strong>Dev. Plan</strong>
+            </a>
+            <a href="showcase.html">
+                <i class="fa-solid fa-panorama"></i> <br>
+                <strong>Showcase</strong>
+            </a>
+        </div>
+    </div> 
+
+    <div class="report-container" style="padding: 20px; line-height: 1.6;">
+        <h1 class="report-title" style="margin-bottom: 20px;">Development Plan</h1>
+        <img src="images/basketballPlayers.jpg" width="700" height="auto" class="report-img" style="display: block; margin: 0 auto 20px;">
+    
+        <div class="report-section" style="margin-bottom: 15px;">
+            <h2 class="section-title" style="margin-bottom: 5px;">Project Name: <span style="color: #ff6347;">Hoops Dynasty</span> <span style="font-size: 0.8em; color: #666;">(Changed from Bounce)</span></h2>
+        </div>
+    
+        <div class="report-section" style="margin-bottom: 15px;">
+            <h2 class="section-title" style="margin-bottom: 5px;">Client Name: Krishh Lala</h2>
+        </div>
+    
+        <div class="report-section" style="margin-bottom: 15px;">
+            <h2 class="section-title" style="margin-bottom: 5px;">Team Members: Abdul Moeez Shaikh, Daryl John, Grady Rueffer, Gagan Bhattarai</h2>
+        </div>
+    
+        <div class="align-left" style="padding-left: 10px;">
+            <div class="report-section" style="margin-bottom: 20px;">
+                <h2 class="section-title" style="margin-bottom: 10px;">Purpose:</h2>
+                <ul class="section-paragraph" style="margin-left: 20px;">
+                    <li style="margin-bottom: 10px;">Krishh Lala is a passionate basketball fan who wants a deeper way to engage with the sport beyond watching games. Additionally, he sees this idea as a valuable tool for basketball enthusiasts to analyze team compositions and player efficiency in a strategic setting. Also, he wants to use the simulation for his parlays, simply to see what outcomes are more likely to happen, so that he can make more informed decisions.</li>
+                    <li style="margin-bottom: 10px;"><span style="color: #ff6347;">Hoops Dynasty</span> is a choice-based basketball simulation game where users build custom teams from a database of real player stats. They compete against teams made by other users in simulated matches, making strategic decisions such as passing, shooting, and defending. The game uses real-life NBA stats to determine player performance, ensuring a realistic and immersive experience for our users.</li>
+                </ul>
+            </div>
+    
+            <div class="report-section" style="margin-bottom: 20px;">
+                <h2 class="section-title" style="margin-bottom: 10px;">Data Description:</h2>
+                <p class="section-paragraph" style="margin-bottom: 10px;">The game will require the following database tables:</p>
+                
+                <p class="section-paragraph" style="margin-left: 20px; margin-bottom: 5px;"><strong><span style="color: #ff6347;">hoopsdynastyplayers Table</span></strong> (Stores all player stats and attributes) <span style="font-size: 0.8em; color: #666;">(Changed from Players. Also changed the stats that we use in the table fields)</span></p>
+                <ul class="section-paragraph" style="margin-left: 20px; margin-bottom: 10px;">
+                    <li>player_id (INT, PRIMARY KEY)</li>
+                    <li>player_name (VARCHAR)</li>
+                    <li>player_team (VARCHAR)</li>
+                    <li>three_point_percentage (INT)</li>
+                    <li>two_point_percentage (INT)</li>
+                    <li>free_throw_percentage (INT)</li>
+                    <li>blocks_per_game (INT)</li>
+                    <li>steals_per_game (INT)</li>
+                    <li>personal_fouls_per_game (INT)</li>
+                    <li>photo (LONGBLOB)</li>
+                </ul>
+    
+                <p class="section-paragraph" style="margin-left: 20px; margin-bottom: 5px;"><strong><span style="color: #ff6347;">hoopsdynastyteams Table</span></strong> (Stores all user-created teams) <span style="font-size: 0.8em; color: #666;">(Changed from User Team. Also changed the table functionality to store full teams created by users as one entry)</span></p>
+                <ul class="section-paragraph" style="margin-left: 20px; margin-bottom: 10px;">
+                    <li>id (INT, PRIMARY KEY)</li>
+                    <li>creator (VARCHAR)</li>
+                    <li>team_name (VARCHAR)</li>
+                    <li>access (INT)</li>
+                    <li>center (VARCHAR)</li>
+                    <li>power_forward (VARCHAR)</li>
+                    <li>small_forward (VARCHAR)</li>
+                    <li>point_guard (VARCHAR)</li>
+                    <li>shooting_guard (VARCHAR)</li>
+                </ul>
+    
+                <p class="section-paragraph" style="margin-left: 20px; margin-bottom: 5px;"><strong><span style="color: #ff6347;">hoopsdynastyusers Table</span></strong> (Stores all account login info)</p>
+                <ul class="section-paragraph" style="margin-left: 20px; margin-bottom: 10px;">
+                    <li>id (INT, PRIMARY KEY)</li>
+                    <li>username (VARCHAR)</li>
+                    <li>password (VARCHAR)</li>
+                    <li>firstname (VARCHAR)</li>
+                    <li>lastname (VARCHAR)</li>
+                    <li>accesslevel (INT)</li>
+                    <li>email (VARCHAR)</li>
+                </ul>
+            </div>
+    
+            <div class="report-section" style="margin-bottom: 20px;">
+                <h2 class="section-title" style="margin-bottom: 10px;">Functions Performed by the App:</h2>
+                <p class="section-paragraph" style="font-size: 0.8em; color: #666; margin-bottom: 10px;">(Made some changes to how the tables get used in our implementation)</p>
+                <ul class="section-paragraph" style="margin-left: 20px;">
+                    <li style="margin-bottom: 5px;"><strong>User logins in/creates a new account</strong> (INSERT/SELECT from the hoopsdynastyusers table)</li>
+                    <li style="margin-bottom: 5px;"><strong>User selects players to create a custom team, or selects a previously made team</strong> (INSERT/SELECT teams from the hoopsdynastyteams table)</li>
+                    <li style="margin-bottom: 5px;"><strong>User plays against teams made by other users</strong> (SELECT teams from the hoopsdynastyteams table)</li>
+                    <li style="margin-bottom: 5px;"><strong>Game simulates match using real player statistics</strong> (SELECT player stats from the hoopsdynastyplayers table and calculates the outcome)</li>
+                    <li style="margin-bottom: 5px;"><strong>User makes strategic decisions during gameplay</strong> (Game logic is done through Javascript/PHP)</li>
+                </ul>
+            </div>
+
+            <div class="report-section" style="margin-bottom: 20px;">
+                <h2 class="section-title" style="margin-bottom: 10px;">Role of PHP and JavaScript:</h2>
+                <p class="section-paragraph"><strong>PHP:</strong></p>
+                <ul class="section-paragraph" style="margin-left: 20px;">
+                    <li style="margin-bottom: 10px;">Handles database interactions (INSERT SELECT etc. operations on the database tables)</li>
+                    <li style="margin-bottom: 10px;">Processes game simulations on the server</li>
+                    <li style="margin-bottom: 10px;">Manages user sessions and authentication</li>
+                </ul>
+                <p class="section-paragraph"><strong>JavaScript:</strong></p>
+                <ul class="section-paragraph" style="margin-left: 20px;">
+                    <li style="margin-bottom: 10px;">Provides interactive user interface (team selection, in-game decisions)</li>
+                    <li style="margin-bottom: 10px;">Sends user actions (pass, shoot, etc.) to the backend for processing</li>
+                    <li style="margin-bottom: 10px;">Displays match progress and outcomes dynamically</li>
+                </ul>
+            </div>
+    
+            <div class="report-section" style="margin-bottom: 20px;">
+                <h2 class="section-title" style="margin-bottom: 10px;">Roles of Team Members:</h2>
+                <p class="section-paragraph" style="font-size: 0.8em; color: #666; margin-bottom: 10px;">(Made some changes to better describe our roles)</p>
+                <ul class="section-paragraph" style="margin-left: 20px;">
+                    <li style="margin-bottom: 10px;"><strong>Abdul Moeez Shaikh:</strong> Frontend development for all main pages of the project, connected frontend actions to PHP backend, and is responsible for overall responsiveness and UI consistency across pages (HTML, CSS, JavaScript, PHP)
+                        <p style="margin-top: 5px; margin-left: 10px; font-style: italic; font-size: 0.9em;">So me and Gagan started working on first determining the perfect palette for the whole interface to make sure it looks clean and consistent throughout. Then I started researching some UI designs online to get some inspiration from. I ended up sketching some designs and shared it with the team and they loved it so I started designing and I'm really happy with the outcome. The hardest part for me was definitely finding inspiration as there was no out right example of an interface that we were trying to make. Also making sure every detail is shown and looks presentable was important so I kept that at a high priority. I really found JavaScript to be easy as there is not much syntax to memorize for it. Other than connecting HTML tags and manipulating them, everything else could be looked up or I found in the textbook. Figuring out some of the PHP was also a challenging task, since I had never worked with the PHP before, it was a big learning curve. However, I really found the exercises and the sample code to be my biggest friend and almost anything that I was looking for, I could find there. For the rest of small integrations and miscellaneous stuff, I found it not that hard and could do the rest smoothly.</p>
+                    </li>
+                    <li style="margin-bottom: 10px;"><strong>Daryl John:</strong> Primary developer for core game simulation logic, created frontend and backend scripts for calculating outcome success/failure and integrated this with interactive turn based events (Javascript, PHP)
+                        <p style="margin-top: 5px; margin-left: 10px; font-style: italic; font-size: 0.9em;">I was responsible for creating the core game simulation logic that powers the turn-based gameplay of our project. I started by discussing with Grady what NBA stats we could use, and how we could turn those stats into decisions that feel fair but still exciting for the user to use. From there, I started writing the JavaScript code that handles all of the in-game actions like shooting, passing, blocking, and more. Each action dynamically calculates success probabilities based on the player stats and selected position, which are fetched from the database using PHP scripts. One of the biggest challenges I faced was getting the logic of the quicktime events that happen randomly to feel smooth and realistic, while still being simple enough for users to follow. I also worked on making the game log show a detailed description of events, which would help users understand how their choices impacted the game's outcome. Fine-tuning the balance between realism and fun gameplay took several attempts, but I enjoyed the process and learned a lot about connecting PHP with JavaScript and making the AJAX interactions feel seamless.</p>
+                    </li>
+                    <li style="margin-bottom: 10px;"><strong>Grady Rueffer:</strong> Designed and implemented all of the three main tables, as well as the scripts and frontend needed for the player selection and team creation. (PHP, Javascript, Database Management)
+                        <p style="margin-top: 5px; margin-left: 10px; font-style: italic; font-size: 0.9em;">As the backend developer, I was responsible for the database, queries, and DOM interaction with database content. You'll find most of my work in the teambuilder, as it is the most backend intensive in establishing player created teams, querying for player data, and implementing search behaviour. My main implementations are found in deleteteam.php, getplayers.php, getteamplayers.php, getteams.php, and saveteam.php, as well as pieces of the teambuilder.js and index.php prior to the ui overhaul. As session management also pertains to backend programming, you'll also find my work in the functionality of the accounts js file, as well as the createaccount, logout, and signin php files. Overall, the most challenging portion of the role was working through more concepts of the structure of the database, building with a keen mind to ensure that all the functionality of the application is easily accessible in addition to not repeating data. For example, in order to achieve this, each team member must be queried from a table separate from the teams table in order to obtain their stats, as it is not stored through the team structure. While this comes at a loss of time to query from the database, it saves space on the server as well as ensures that player data can be easily altered without improper data being stored to a team.</p>
+                    </li>
+                    <li style="margin-bottom: 10px;"><strong>Gagan Bhattarai:</strong> Developed frontend and backend for the user account system and user authentication with session control, as well as designed all of the cross-page interactions involving users and saved teams (HTML, CSS, Javascript, PHP)
+                        <p style="margin-top: 5px; margin-left: 10px; font-style: italic; font-size: 0.9em;">I was responsible for making the login and signup page as well as the cross page integration regarding accounts for this project. One challenge I faced with the front end part of the sign in and login page was the styling aspect. Given this project was something to highlight the skills we learned throughout the course, I had forgotten some of the simplest of things with regards to this. My divs wouldn't center, elements would be miss aligned (some would use percentages whilst others use pixels), I would misuse tags for classes and dot for ids, making debugging extremely frustrating and discouraging. This was definitely due to me not touching frontend as the course had moved on to the backend side of it. Given this time and era, I utilized the knowledge of my team and the textbook in order to find the simplest of bugs and effectively resolve them. Frontend was the hardest part for me given diminishing knowledge, I had little to no problem with the rest!</p>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="report-section" style="margin-bottom: 20px;">
+                <h2 class="section-title" style="margin-bottom: 10px;">The Increments:</h2>
+                <p class="section-paragraph" style="font-size: 0.8em; color: #666; margin-bottom: 10px;">(Made some changes to be more descriptive)</p>
+                <p class="section-paragraph"><strong>Increment 1 (Week 11):</strong></p>
+                <ul class="section-paragraph" style="margin-left: 20px;">
+                    <li style="margin-bottom: 10px;"><strong>Database setup (Grady):</strong>
+                        <ul style="margin-left: 15px; margin-top: 5px;">
+                            <li>Created all three tables with proper fields and constraints</li>
+                            <li>Populated the initial player database with 8-10 NBA player's data</li>
+                        </ul>
+                    </li>
+                    <li style="margin-bottom: 10px;"><strong>Menu/team builder prototype (Moeez, Grady):</strong>
+                        <ul style="margin-left: 15px; margin-top: 5px;">
+                            <li>Moeez created a basic HTML/CSS layout for the menu, team selection, and game pages</li>
+                            <li>Grady connected player data from the database to the pages using PHP</li>
+                        </ul>
+                    </li>
+                    <li style="margin-bottom: 10px;"><strong>Account system (Gagan):</strong>
+                        <ul style="margin-left: 15px; margin-top: 5px;">
+                            <li>Created the HTML/CSS for the registration and login pages</li>
+                        </ul>
+                    </li>
+                    <li style="margin-bottom: 10px;"><strong>Game logic (Daryl):</strong>
+                        <ul style="margin-left: 15px; margin-top: 5px;">
+                            <li>Created the Javascript logic to simulate the game events</li>
+                            <li>Added in the PHP scripts needed to pull stats from the tables</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <p class="section-paragraph"><strong>Increment 2 (Week 12.1):</strong></p>
+                <ul class="section-paragraph" style="margin-left: 20px;">
+                    <li style="margin-bottom: 10px;"><strong>Menu/team builder pages (Moeez, Grady):</strong>
+                        <ul style="margin-left: 15px; margin-top: 5px;">
+                            <li>Implemented PHP scripts to display information from the tables in the menu and team builder pages</li>
+                            <li>Enhanced the UI for both pages to be more user friendly</li>
+                        </ul>
+                    </li>
+                    <li style="margin-bottom: 10px;"><strong>User sessions & team saving (Gagan):</strong>
+                        <ul style="margin-left: 15px; margin-top: 5px;">
+                            <li>Worked on the PHP scripts to authenticate user login with the database</li>
+                            <li>Used PHP sessions to maintain login state across the webapp</li>
+                        </ul>
+                    </li>
+                    <li style="margin-bottom: 10px;"><strong>Game logic implemented (Daryl):</strong>
+                        <ul style="margin-left: 15px; margin-top: 5px;">
+                            <li>Created a game log to display game events in a text format</li>
+                            <li>Added in randomized mid-turn events that affect the game score/player stats</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <p class="section-paragraph"><strong>Increment 3 (Week 12.2):</strong></p>
+                <ul class="section-paragraph" style="margin-left: 20px;">
+                    <li style="margin-bottom: 10px;"><strong>UI and UX polishing (Moeez):</strong>
+                        <ul style="margin-left: 15px; margin-top: 5px;">
+                            <li>Fully redesigned the visual theme of the entire webapp to be more visually appealing</li>
+                        </ul>
+                    </li>
+                    <li style="margin-bottom: 10px;"><strong>Expanded player database (Grady):</strong>
+                        <ul style="margin-left: 15px; margin-top: 5px;">
+                            <li>Added a lot more new players with accurate stats and images to ensure variety</li>
+                        </ul>
+                    </li>
+                    <li style="margin-bottom: 10px;"><strong>Game logic tweaks (Daryl):</strong>
+                        <ul style="margin-left: 15px; margin-top: 5px;">
+                            <li>Fine-tuned the Javascript functions and did final game logic bug fixes</li>
+                        </ul>
+                    </li>
+                    <li style="margin-bottom: 10px;"><strong>Opponent Team loading (Gagan):</strong>
+                        <ul style="margin-left: 15px; margin-top: 5px;">
+                            <li>Added functionality to load in other user's saved teams as opponents</li>
+                            <li>Helped fix bugs with the game simulation and team builder pages</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="report-section" style="margin-bottom: 20px;">
+                <h2 class="section-title" style="margin-bottom: 10px;">Client Feedback:</h2>
+                <p class="section-paragraph" style="font-size: 0.8em; color: #666; margin-bottom: 10px;">(Changed to also include feedback for the final increment)</p>
+                <p class="section-paragraph" style="margin-bottom: 10px;">
+                    After presenting the initial idea to Krishh Lala, he was excited about the ability to simulate real basketball games using actual player stats. He suggested:
+                </p>
+                <ul class="section-paragraph" style="margin-left: 20px;">
+                    <li style="margin-bottom: 10px;">Adding a difficulty setting to balance the gameplay.</li>
+                    <li style="margin-bottom: 10px;">Allowing users to save and load their teams for replayability.</li>
+                    <li style="margin-bottom: 10px;">Ensuring that player fatigue and stamina affect gameplay to increase realism. <span style="font-style: italic;">(This one might be too complicated to implement so we will leave it out for now)</span></li>
+                </ul>
+                <p class="section-paragraph" style="margin-bottom: 10px; margin-top: 15px;">
+                    <span style="color: #ff6347;">In the final demo that we showed Krishh Lala, he was very pleased by all of the new changes that we had added. We had done a complete revamp of our UI, and added a lot more functionality into the webapp since the last time that we showed him our progress, and we had also implemented Krishh's suggestion about allowing users to save and load their teams for replayability. Some of his other suggestions from when we presented our initial idea were a bit too complicated to implement, but Krishh still loved the final result nonetheless.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+
+    <div id="footer">
+        <p> &copy;  <strong>Team Dynamite 2025</strong></p>
+    </div>
+</body>
+</html>
